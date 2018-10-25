@@ -45,6 +45,9 @@ RUN sed -i 's/^\(tty\d\:\:\)/#\1/g' /etc/inittab \
     # Can't do cgroups
     && sed -i 's/cgroup_add_service /# cgroup_add_service /g' /lib/rc/sh/openrc-run.sh \
     && sed -i 's/VSERVER/DOCKER/Ig' /lib/rc/sh/init.sh
+    
+RUN apk add --no-cache tzdata
+ENV TZ America/Los_Angeles    
 
 EXPOSE 2222 8080
 
