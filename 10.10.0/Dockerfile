@@ -47,7 +47,7 @@ RUN sed -i 's/^\(tty\d\:\:\)/#\1/g' /etc/inittab \
     && sed -i 's/VSERVER/DOCKER/Ig' /lib/rc/sh/init.sh
     
 RUN apk add --no-cache tzdata
-ENV TZ America/Los_Angeles    
+ENV TZ Europe/Amsterdam    
 
 EXPOSE 2222 8080
 
